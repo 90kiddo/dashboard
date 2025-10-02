@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MIS Interface Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="app">
+        <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+            <symbol id="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+            </symbol>
+            <symbol id="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z" />
+                <circle cx="12" cy="12" r="3" />
+            </symbol>
+            <symbol id="icon-cloud-download" viewBox="0 0 24 24  " fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 16.58A5 5 0 0018 7h-1.26A8 8 0 104 15.25" />
+                <polyline points="8 17 12 21 16 17" />
+                <line x1="12" y1="12" x2="12" y2="21" />
+            </symbol>
+        </svg>
+        <header class="app__header">
+            <h1 class="brand">MIS INTERFACE</h1>
+            <div class="filters">
+                <label class="select">
+                    <select>
+                        <option>Tamatiuk Kenya Safaricom</option>
+                        <option>MTN Uganda</option>
+                        <option>Vodacom Tanzania</option>
+                    </select>
+                </label>
+                <div class="date-range">
+                    <label class="date">
+                        <input type="date" aria-label="Start date" />
+                    </label>
+                    <span class="date-sep">to</span>
+                    <label class="date">
+                        <input type="date" aria-label="End date" />
+                    </label>
+                </div>
+                <button class="btn btn--primary">Search</button>
+            </div>
+        </header>
+
+        <main class="content">
+            <section class="stats-grid">
+                <article class="stat-card stat-card--green">
+                    <div class="icon">💰</div>
+                    <div class="meta">
+                        <h3>350,616</h3>
+                        <p>Total Revenue</p>
+                    </div>
+                    <div class="peek"><a href="#" class="icon-link" aria-label="View"><svg class="icon-16 icon-eye"><use href="#icon-eye" /></svg></a><a href="#" class="icon-link" aria-label="Download"><svg class="icon-16"><use href="#icon-cloud-download" /></svg></a></div>
+                </article>
+                <article class="stat-card stat-card--amber">
+                    <div class="icon">✅</div>
+                    <div class="meta">
+                        <h3>3</h3>
+                        <p>Activation Success</p>
+                    </div>
+                    <div class="peek"><a href="#" class="icon-link" aria-label="View"><svg class="icon-16 icon-eye"><use href="#icon-eye" /></svg></a><a href="#" class="icon-link" aria-label="Download"><svg class="icon-16"><use href="#icon-cloud-download" /></svg></a></div>
+                </article>
+                <article class="stat-card stat-card--dark">
+                    <div class="icon">👤</div>
+                    <div class="meta">
+                        <h3>167</h3>
+                        <p>Total Deactivation</p>
+                    </div>
+                    <div class="peek"><a href="#" class="icon-link" aria-label="View"><svg class="icon-16 icon-eye"><use href="#icon-eye" /></svg></a><a href="#" class="icon-link" aria-label="Download"><svg class="icon-16"><use href="#icon-cloud-download" /></svg></a></div>
+                </article>
+
+                <article class="stat-card stat-card--blue">
+                    <div class="icon">🔁</div>
+                    <div class="meta">
+                        <h3>350,616</h3>
+                        <p>Renewal success</p>
+                    </div>
+                    <div class="peek"><a href="#" class="icon-link" aria-label="View"><svg class="icon-16 icon-eye"><use href="#icon-eye" /></svg></a><a href="#" class="icon-link" aria-label="Download"><svg class="icon-16"><use href="#icon-cloud-download" /></svg></a></div>
+                </article>
+                <article class="stat-card stat-card--cyan">
+                    <div class="icon">🧊</div>
+                    <div class="meta">
+                        <h3>3</h3>
+                        <p>Active Base</p>
+                    </div>
+                    <div class="peek"><a href="#" class="icon-link" aria-label="View"><svg class="icon-16 icon-eye"><use href="#icon-eye" /></svg></a><a href="#" class="icon-link" aria-label="Download"><svg class="icon-16"><use href="#icon-cloud-download" /></svg></a></div>
+                </article>
+                <article class="stat-card stat-card--red">
+                    <div class="icon">📚</div>
+                    <div class="meta">
+                        <h3>167</h3>
+                        <p>Total Hits</p>
+                    </div>
+                    <div class="peek"><a href="#" class="icon-link" aria-label="View"><svg class="icon-16 icon-eye"><use href="#icon-eye" /></svg></a><a href="#" class="icon-link" aria-label="Download"><svg class="icon-16"><use href="#icon-cloud-download" /></svg></a></div>
+                </article>
+            </section>
+
+            <section class="overview">
+                <div class="chart-card">
+                    <h4>Activation Count vs. Revenue</h4>
+                    <canvas id="activationChart"></canvas>
+                </div>
+
+                <div class="event-list">
+                    <button class="event-item">Same Day Churn <span class="icons"><a href="#" class="icon-link" aria-label="View"><svg class="icon-16 icon-eye"><use href="#icon-eye" /></svg></a> <a href="#" class="icon-link" aria-label="Download"><svg class="icon-16"><use href="#icon-cloud-download" /></svg></a></span></button>
+                    <button class="event-item">Activation failure <span class="icons"><a href="#" class="icon-link" aria-label="View"><svg class="icon-16 icon-eye"><use href="#icon-eye" /></svg></a> <a href="#" class="icon-link" aria-label="Download"><svg class="icon-16"><use href="#icon-cloud-download" /></svg></a></span></button>
+                    <button class="event-item">Activation Request <span class="icons"><a href="#" class="icon-link" aria-label="View"><svg class="icon-16 icon-eye"><use href="#icon-eye" /></svg></a> <a href="#" class="icon-link" aria-label="Download"><svg class="icon-16"><use href="#icon-cloud-download" /></svg></a></span></button>
+                    <button class="event-item">Activation low balance <span class="icons"><a href="#" class="icon-link" aria-label="View"><svg class="icon-16 icon-eye"><use href="#icon-eye" /></svg></a> <a href="#" class="icon-link" aria-label="Download"><svg class="icon-16"><use href="#icon-cloud-download" /></svg></a></span></button>
+                </div>
+            </section>
+
+            <section class="tables">
+                <div class="table-card">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>DATE</th>
+                                <th>Activation count</th>
+                                <th>Activation Revenue</th>
+                                <th>Renewal Count</th>
+                                <th>Renewal Revenue</th>
+                                <th>Total Revenue</th>
+                                <th>Stell Revenue</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2025-04-01</td>
+                                <td>3</td>
+                                <td>45.00</td>
+                                <td>23372</td>
+                                <td>350571.00</td>
+                                <td>350616.00</td>
+                                <td>86142.73</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>TOTAL</th>
+                                <th>3</th>
+                                <th>45.00</th>
+                                <th>23372</th>
+                                <th>350571.00</th>
+                                <th>350616.00</th>
+                                <th>86142.73 KSH</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <div class="table-controls">
+                    
+                    <label class="select">
+                        <select>
+                            <option>Pub id</option>
+                            <option>1001</option>
+                            <option>1002</option>
+                        </select>
+                    </label>
+                    <button class="btn btn--secondary">Change Logic</button>
+                </div>
+
+                <div class="table-card">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>DATE</th>
+                                <th>Pub Name</th>
+                                <th>Total Count</th>
+                                <th>SENT COUNT</th>
+                                <th>NOT SENT COUNT</th>
+                                <th>HOLD %</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2025-04-01</td>
+                                <td>mobspa</td>
+                                <td>18</td>
+                                <td>18</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>TOTAL</th>
+                                <th></th>
+                                <th>18</th>
+                                <th>18</th>
+                                <th>0</th>
+                                <th>0</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
